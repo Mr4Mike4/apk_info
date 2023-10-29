@@ -74,8 +74,7 @@ class _SettingsPageState extends State<SettingsPage> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    width: 600,
+                  Expanded(
                     child: InputTextField(
                       labelText: S.settings_aapt_path,
                       controller: _aaptPathController,

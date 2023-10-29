@@ -19,7 +19,10 @@ class ApkTableItem extends StatelessWidget {
           children: [
             Flexible(
               fit: FlexFit.tight,
-              child: Text(fileInfo.fieldName, textAlign: TextAlign.right,),
+              child: Text(
+                fileInfo.fieldName,
+                textAlign: TextAlign.right,
+              ),
             ),
             const SizedBox(
               width: 64,

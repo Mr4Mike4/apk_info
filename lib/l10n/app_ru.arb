@@ -1,0 +1,51 @@
+{
+  "@@locale": "ru",
+  "app_title": "ApkInfo",
+  "app_name": "ApkInfo",
+  "@app_name": {
+    "description": "название приложения"
+  },
+
+  "btn_add_files": "Добавить файлы",
+  "btn_preview": "Предпросмотр",
+  "btn_rename_files": "Переименовать",
+  "btn_yes": "Да",
+  "btn_save": "Сохранить",
+  "btn_cancel": "Отменить",
+  "btn_select": "Выбрать",
+  "btn_close": "Закрыть",
+
+  "file_path": "Путь к файлу",
+  "table_column_name": "Исходное имя",
+  "table_column_new_name": "Новое имя",
+  "file_name_mask": "Маска для имени файла",
+  "file_delete_confirm": "Вы действительно хотите удалить \"{fileName}\" из списка?",
+  "@file_delete_confirm": {
+    "placeholders": {
+      "fileName": {
+        "type": "String",
+        "example": "app.apk"
+      }
+    }
+  },
+  "select_dest_folder": "Выберете папку в которую будут скопированы файлы",
+  "copy_to_folder": "Скопировать файлы",
+  "app_exit_confirm": "Вы действительно хотите закрыть приложение?",
+
+  "settings_title": "Настройки",
+  "settings_aapt_path": "Путь к aapt2",
+  "settings_select_aapt_path": "Выберете папку с aapt2",
+
+  "error_aapt_path": "Выберете корректный путь к aapt2",
+
+  "apk_application_id": "Идентификатор приложения",
+  "apk_version_code": "Код версии",
+  "apk_version_name": "Имя версии",
+  "apk_platform_build_version_name": "Имя версии сборки платформы",
+  "apk_platform_build_version_code": "Код версии сборки платформы",
+  "apk_compile_sdk_version": "Код версии sdk которым собрано приложение",
+  "apk_compile_sdk_version_codename": "Код версии sdk которым собрано приложение",
+  "apk_sdk_version": "Версия sdk",
+  "apk_target_sdk_version": "Целевая версия sdk",
+  "apk_application_label": "Ярлык приложения"
+}

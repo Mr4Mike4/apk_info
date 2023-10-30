@@ -9,4 +9,8 @@ class ApkInfoEvent with _$ApkInfoEvent {
 
   const factory ApkInfoEvent.openFiles() = _OpenFilesApkInfoEvent;
 
+  const factory ApkInfoEvent.openFilePath({
+    required String? filePath,
+  }) = _OpenFilePathApkInfoEvent;
+
 }

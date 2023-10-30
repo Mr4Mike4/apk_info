@@ -1,3 +1,4 @@
+import 'package:apk_info/internal/app_args.dart';
 import 'package:fluent_ui/fluent_ui.dart' hide Page;
 import 'package:flutter/foundation.dart';
 import 'package:system_theme/system_theme.dart';
@@ -15,7 +16,7 @@ bool get isDesktop {
   ].contains(defaultTargetPlatform);
 }
 
-void main() async {
+Future<void> main(List<String> arguments) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // if it's not on the web, windows or android, load the accent color
@@ -29,33 +30,24 @@ void main() async {
 
   await AppAssembly.init();
 
-  if (isDesktop) {
-    // await flutter_acrylic.Window.initialize();
-    // await flutter_acrylic.Window.hideWindowControls();
-    await WindowManager.instance.ensureInitialized();
-    const windowOptions = WindowOptions(
-      size: Size(500, 600),
-      minimumSize: Size(500, 600),
-      center: true,
-      skipTaskbar: false,
-      titleBarStyle: TitleBarStyle.hidden,
-      windowButtonVisibility: false,
-    );
+  await WindowManager.instance.ensureInitialized();
+  const windowOptions = WindowOptions(
+    size: Size(500, 600),
+    minimumSize: Size(500, 600),
+    center: true,
+    skipTaskbar: false,
+    titleBarStyle: TitleBarStyle.hidden,
+    windowButtonVisibility: false,
+  );
 
-    windowManager.waitUntilReadyToShow(windowOptions).then((_) async {
-      await windowManager.show();
-      await windowManager.setPreventClose(true);
-    });
-  }
+  windowManager.waitUntilReadyToShow(windowOptions).then((_) async {
+    await windowManager.show();
+    await windowManager.setPreventClose(true);
+  });
 
-  runApp(const MyApp());
+  runApp(AppArgs(
+    filePath: arguments.firstOrNull,
+    child: const MyApp(),
+  ));
 
-  // Future.wait([
-  //   DeferredWidget.preload(popups.loadLibrary),
-  //   DeferredWidget.preload(forms.loadLibrary),
-  //   DeferredWidget.preload(inputs.loadLibrary),
-  //   DeferredWidget.preload(navigation.loadLibrary),
-  //   DeferredWidget.preload(surfaces.loadLibrary),
-  //   DeferredWidget.preload(theming.loadLibrary),
-  // ]);
 }

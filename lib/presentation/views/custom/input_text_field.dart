@@ -13,6 +13,7 @@ class InputTextField extends StatelessWidget {
     this.obscureText = false,
     this.inputFormatters,
     this.maxLines = 1,
+    this.scrollController,
   }) : super(key: key);
 
   final String labelText;
@@ -26,6 +27,7 @@ class InputTextField extends StatelessWidget {
   final bool obscureText;
   final List<TextInputFormatter>? inputFormatters;
   final int maxLines;
+  final ScrollController? scrollController;
 
   // final InputDecoration? decoration;
 
@@ -44,6 +46,7 @@ class InputTextField extends StatelessWidget {
         obscureText: obscureText,
         inputFormatters: inputFormatters,
         maxLines: maxLines,
+        scrollController: scrollController,
       ),
     );
   }

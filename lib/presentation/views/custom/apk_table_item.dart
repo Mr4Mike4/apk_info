@@ -13,8 +13,10 @@ class ApkTableItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: SizedBox(
-        height: 32,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          minHeight: 32,
+        ),
         child: Row(
           children: [
             Flexible(
@@ -25,7 +27,7 @@ class ApkTableItem extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              width: 64,
+              width: 32,
               child: Center(
                 child: Text(':'),
               ),

@@ -26,7 +26,7 @@ class InfoUtil {
     fileInfo.setRow(S.apk_platform_build_version_code, apkInfo?.platformBuildVersionCode);
     fileInfo.setRow(S.apk_compile_sdk_version, apkInfo?.compileSdkVersion);
     fileInfo.setRow(S.apk_compile_sdk_version_codename,apkInfo?.compileSdkVersionCodename);
-    fileInfo.setRow(S.apk_sdk_version, apkInfo?.sdkVersion);
+    fileInfo.setRow(S.apk_sdk_version, apkInfo?.minSdkVersion);
     fileInfo.setRow(S.apk_target_sdk_version, apkInfo?.targetSdkVersion);
     return fileInfo;
   }

@@ -20,6 +20,10 @@ class ApkInfoState with _$ApkInfoState {
     required String error,
   }) = _ErrorApkInfoState;
 
+  const factory ApkInfoState.fatalError({
+    required String error,
+  }) = _FatalErrorApkInfoState;
+
   const factory ApkInfoState.showProgress() = _ShowProgressApkInfoState;
 
   const factory ApkInfoState.hideProgress() = _HideProgressApkInfoState;

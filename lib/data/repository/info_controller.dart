@@ -5,9 +5,9 @@ import 'package:parser_apk_info/parser_apk_info.dart';
 
 class InfoController {
   final Logger _logger;
-  final ParserApkInfo _parserApkInfo;
+  final ParserApkInfoAapt _parserApkInfo;
 
-  InfoController(this._logger) : _parserApkInfo = ParserApkInfo(_logger);
+  InfoController(this._logger) : _parserApkInfo = ParserApkInfoAapt(_logger);
 
   // final List<ApkInfo> _listApkInfo = [];
   //

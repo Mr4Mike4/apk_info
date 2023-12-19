@@ -59,20 +59,20 @@ class _MyHomePageState extends State<MyHomePage> with WindowListener {
             ),
           );
         }(),
-        actions: Row(
+        actions: const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SizedBox(
-              width: 50,
-              height: 50,
-              child: Center(
-                child: IconButton(
-                  icon: const Icon(FluentIcons.settings,),
-                  onPressed: () => context.push('/settings'),
-                ),
-              ),
-            ),
-            const WindowButtons(),
+            // SizedBox(
+            //   width: 50,
+            //   height: 50,
+            //   child: Center(
+            //     child: IconButton(
+            //       icon: const Icon(FluentIcons.settings,),
+            //       onPressed: () => context.push('/settings'),
+            //     ),
+            //   ),
+            // ),
+            WindowButtons(),
           ],
         ),
       ),

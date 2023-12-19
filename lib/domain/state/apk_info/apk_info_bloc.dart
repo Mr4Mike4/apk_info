@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:apk_info/data/info_isolate/info_isolate.dart';
 import 'package:apk_info/domain/model/file_info.dart';
 import 'package:apk_info/domain/model/info_util.dart';
+import 'package:apk_info/internal/aapt_path_util.dart';
 import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:parser_apk_info/repository/parser_apk_info.dart';
+import 'package:parser_apk_info/repository/aapt_util.dart';
 
 import '../../../data/repository/preferences_repository.dart';
 import '../../../internal/localiz.dart';
@@ -26,7 +28,7 @@ class ApkInfoBloc extends Bloc<ApkInfoEvent, ApkInfoState> {
     Localiz.l10n.then((l10n) {
       _S = l10n;
     });
-    // add(const ApkInfoEvent.init());
+    add(const ApkInfoEvent.init());
   }
 
   final InfoIsolate _infoIsolate;
@@ -35,14 +37,14 @@ class ApkInfoBloc extends Bloc<ApkInfoEvent, ApkInfoState> {
 
   FutureOr<void> _onInitApkInfoEvent(
       _InitApkInfoEvent event, Emitter<ApkInfoState> emit) async {
-    // final destPath = await _pref.getDestPath();
-    // final copyToFolder = await _pref.getCopyToFolder();
-    // final pattern = await _pref.getPattern();
-    // emit.call(ApkInfoState.load(
-    //   destPath: destPath,
-    //   copyToFolder: copyToFolder,
-    //   pattern: pattern,
-    // ));
+    final aaptDirPath = AaptPathUtil.getAaptApp(kDebugMode);
+    final aaptPath = await AaptUtil.getAaptApp(aaptDirPath);
+    if (aaptPath == null) {
+      emit.call(ApkInfoState.fatalError(
+        error: _S.error_aapt_not_found,
+      ));
+      return;
+    }
   }
 
   Future<void> _openFile(Emitter<ApkInfoState> emit, String? path) async {
@@ -78,7 +80,7 @@ class ApkInfoBloc extends Bloc<ApkInfoEvent, ApkInfoState> {
       _OpenFilePathApkInfoEvent event, Emitter<ApkInfoState> emit)async {
     logger.d('_OpenFilePathApkInfoEvent');
     final path = event.filePath;
-    if(path?.endsWith(ParserApkInfo.apkExt)??false){
+    if(path?.endsWith(AaptUtil.apkExt)??false){
       await _openFile(emit, path);
     }
   }

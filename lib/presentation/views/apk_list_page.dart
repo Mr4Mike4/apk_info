@@ -1,7 +1,9 @@
 import 'package:apk_info/internal/app_args.dart';
+import 'package:apk_info/presentation/views/custom/error_dialog.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kiwi/kiwi.dart';
+import 'package:window_manager/window_manager.dart';
 
 import '../../domain/state/apk_info/apk_info_bloc.dart';
 import '../../localizations.dart';
@@ -38,6 +40,21 @@ class _ApkListPageState extends State<ApkListPage> {
         _bloc.add(ApkInfoEvent.openFilePath(
           filePath: filePath,
         ));
+      }
+    });
+  }
+
+  void _showError(String error, {bool isFatal = false}) {
+    showDialog<bool>(
+      context: context,
+      builder: (_) {
+        return ErrorDialog(
+          content: error,
+        );
+      },
+    ).then((_) {
+      if (isFatal) {
+        windowManager.destroy();
       }
     });
   }
@@ -85,6 +102,10 @@ class _ApkListPageState extends State<ApkListPage> {
                           .jumpTo(_scrollController.position.maxScrollExtent);
                     });
                     return true;
+                  },
+                  fatalError: (st) {
+                    _showError(st.error, isFatal: true);
+                    return false;
                   },
                   orElse: () => true,
                 );

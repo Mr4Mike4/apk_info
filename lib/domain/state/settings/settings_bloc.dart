@@ -4,7 +4,6 @@ import 'package:apk_info/internal/localiz.dart';
 import 'package:bloc/bloc.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:parser_apk_info/repository/parser_apk_info.dart';
 
 import '../../../data/repository/preferences_repository.dart';
 import '../../../logger.dart';
@@ -42,18 +41,18 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
       dialogTitle: _S.settings_select_aapt_path,
       lockParentWindow: true,
     );
-    final aaptPath = await ParserApkInfo.getAaptApp(aaptDirPath);
-    if (aaptPath != null) {
-      logger.d('_SelectAaptPathSettingsEvent >> $aaptPath');
-      emit.call(SettingsState.selectAaptPath(
-        aaptPath: aaptPath,
-      ));
-    } else {
-      logger.d('_SelectAaptPathSettingsEvent >> no select');
-      emit.call(SettingsState.error(
-        error: _S.error_aapt_path,
-      ));
-    }
+    // final aaptPath = await ParserApkInfo.getAaptApp(aaptDirPath);
+    // if (aaptPath != null) {
+    //   logger.d('_SelectAaptPathSettingsEvent >> $aaptPath');
+    //   emit.call(SettingsState.selectAaptPath(
+    //     aaptPath: aaptPath,
+    //   ));
+    // } else {
+    //   logger.d('_SelectAaptPathSettingsEvent >> no select');
+    //   emit.call(SettingsState.error(
+    //     error: _S.error_aapt_path,
+    //   ));
+    // }
   }
 
   FutureOr<void> _onSaveSettingsEvent(

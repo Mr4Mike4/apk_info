@@ -7,8 +7,8 @@ class AaptPathUtil {
   static const aaptPath = 'bin';
 
   static Directory getCurrentDir(){
-    final scriptUri = Platform.script;
-    final file = File.fromUri(scriptUri);
+    final scriptUri = Platform.resolvedExecutable ;
+    final file = File(scriptUri);
     return file.parent;
   }
 

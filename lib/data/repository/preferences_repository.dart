@@ -13,12 +13,12 @@ class PreferencesRepository {
   }
 
   Future<String?> getAaptPath() async {
-    final _prefs = await _prefsFuture;
-    return _prefs.getString(PrefKeys.aaptPath);
+    final prefs = await _prefsFuture;
+    return prefs.getString(PrefKeys.aaptPath);
   }
 
   Future<bool> setAaptPath(String aaptPath) async {
-    final _prefs = await _prefsFuture;
-    return _prefs.setString(PrefKeys.aaptPath, aaptPath);
+    final prefs = await _prefsFuture;
+    return prefs.setString(PrefKeys.aaptPath, aaptPath);
   }
 }

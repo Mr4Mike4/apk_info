@@ -33,15 +33,17 @@ class _PermissionTableState extends State<PermissionTable> {
     // final FluentThemeData theme = FluentTheme.of(context);
     // final S = AppLocal.of(context);
     return BaseTable(
-      child: ListView.builder(
-        itemCount: widget.listPermissions?.length ?? 0,
-        controller: _scrollController,
-        itemBuilder: (context, index) {
-          final item = widget.listPermissions![index];
-          return PermissionTableItem(
-            permission: item,
-          );
-        },
+      child: SelectionArea(
+        child: ListView.builder(
+          itemCount: widget.listPermissions?.length ?? 0,
+          controller: _scrollController,
+          itemBuilder: (context, index) {
+            final item = widget.listPermissions![index];
+            return PermissionTableItem(
+              permission: item,
+            );
+          },
+        ),
       ),
     );
   }

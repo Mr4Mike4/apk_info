@@ -33,15 +33,17 @@ class _ApkTableState extends State<ApkTable> {
   @override
   Widget build(BuildContext context) {
     return BaseTable(
-      child: ListView.builder(
-        itemCount: widget.listInfo?.length ?? 0,
-        controller: _scrollController,
-        itemBuilder: (context, index) {
-          final item = widget.listInfo![index];
-          return ApkTableItem(
-            fileInfo: item,
-          );
-        },
+      child: SelectionArea(
+        child: ListView.builder(
+          itemCount: widget.listInfo?.length ?? 0,
+          controller: _scrollController,
+          itemBuilder: (context, index) {
+            final item = widget.listInfo![index];
+            return ApkTableItem(
+              fileInfo: item,
+            );
+          },
+        ),
       ),
     );
   }

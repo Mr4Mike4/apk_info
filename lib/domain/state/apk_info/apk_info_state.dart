@@ -14,6 +14,7 @@ class ApkInfoState with _$ApkInfoState {
   const factory ApkInfoState.loadApkInfo({
     required String? filePath,
     List<FileInfo>? listInfo,
+    List<String>? listPermissions,
   }) = _LoadApkInfoApkInfoState;
 
   const factory ApkInfoState.error({

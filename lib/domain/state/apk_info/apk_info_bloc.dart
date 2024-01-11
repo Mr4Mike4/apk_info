@@ -50,16 +50,19 @@ class ApkInfoBloc extends Bloc<ApkInfoEvent, ApkInfoState> {
   Future<void> _openFile(Emitter<ApkInfoState> emit, String? path) async {
     emit.call(const ApkInfoState.showProgress());
     List<FileInfo>? listFileInfo;
+    List<String>? listPermissions;
     if (path != null) {
       logger.d('_OpenFilesApkInfoEvent >> $path');
       final apkInfo = await _infoIsolate.getApkInfo(path);
       listFileInfo = InfoUtil.fromApkInfo(_S, apkInfo);
+      listPermissions = apkInfo?.usesPermissions;
     } else {
       logger.d('_OpenFilesApkInfoEvent >> no select');
     }
     emit.call(ApkInfoState.loadApkInfo(
       filePath: path,
       listInfo: listFileInfo,
+      listPermissions: listPermissions,
     ));
   }
 

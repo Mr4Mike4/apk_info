@@ -11,33 +11,31 @@ class ApkTableItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(
-          minHeight: 32,
-        ),
-        child: Row(
-          children: [
-            Flexible(
-              fit: FlexFit.tight,
-              child: Text(
-                fileInfo.fieldName,
-                textAlign: TextAlign.right,
-              ),
+      constraints: const BoxConstraints(
+        minHeight: 32,
+      ),
+      child: Row(
+        children: [
+          Flexible(
+            fit: FlexFit.tight,
+            child: Text(
+              fileInfo.fieldName,
+              textAlign: TextAlign.right,
             ),
-            const SizedBox(
-              width: 32,
-              child: Center(
-                child: Text(':'),
-              ),
+          ),
+          const SizedBox(
+            width: 32,
+            child: Center(
+              child: Text(':'),
             ),
-            Flexible(
-              fit: FlexFit.tight,
-              child: Text(fileInfo.value ?? ''),
-            ),
-          ],
-        ),
+          ),
+          Flexible(
+            fit: FlexFit.tight,
+            child: Text(fileInfo.value ?? ''),
+          ),
+        ],
       ),
     );
   }

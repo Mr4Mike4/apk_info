@@ -1,5 +1,6 @@
 import 'package:apk_info/internal/app_args.dart';
 import 'package:apk_info/presentation/views/custom/error_dialog.dart';
+import 'package:apk_info/presentation/views/tabs_widget.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kiwi/kiwi.dart';
@@ -7,7 +8,6 @@ import 'package:window_manager/window_manager.dart';
 
 import '../../domain/state/apk_info/apk_info_bloc.dart';
 import '../../localizations.dart';
-import 'custom/apk_table.dart';
 import 'custom/input_text_field.dart';
 
 class ApkListPage extends StatefulWidget {
@@ -112,12 +112,13 @@ class _ApkListPageState extends State<ApkListPage> {
               },
               builder: (context, state) {
                 return state.maybeMap(
-                  loadApkInfo: (st) => ApkTable(
+                  loadApkInfo: (st) => TabsWidget(
                     key: const Key('apk_table'),
                     listInfo: st.listInfo,
+                    listPermissions: st.listPermissions,
                   ),
                   showProgress: (_) => const Center(child: ProgressRing()),
-                  orElse: () => const ApkTable(
+                  orElse: () => const TabsWidget(
                     key: Key('apk_table'),
                   ),
                 );

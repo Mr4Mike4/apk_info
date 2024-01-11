@@ -51,14 +51,12 @@ class _MyHomePageState extends State<MyHomePage> with WindowListener {
       key: viewKey,
       appBar: NavigationAppBar(
         automaticallyImplyLeading: false,
-        title: () {
-          return DragToMoveArea(
-            child: Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Text(S.app_title),
-            ),
-          );
-        }(),
+        title: DragToMoveArea(
+          child: Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(S.app_title),
+          ),
+        ),
         actions: const Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [

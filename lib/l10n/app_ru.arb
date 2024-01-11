@@ -39,6 +39,9 @@
   "error_aapt_path": "Выберете корректный путь к aapt2",
   "error_aapt_not_found": "aapt2 не найден",
 
+  "tab_main": "Основные данные",
+  "tab_permissions": "Разрешения",
+
   "apk_application_id": "Идентификатор приложения",
   "apk_version_code": "Код версии",
   "apk_version_name": "Имя версии",

@@ -51,5 +51,7 @@
   "apk_compile_sdk_version_codename": "Имя версии sdk которым собрано приложение",
   "apk_sdk_version": "Версия sdk",
   "apk_target_sdk_version": "Целевая версия sdk",
-  "apk_application_label": "Ярлык приложения"
+  "apk_application_label": "Ярлык приложения",
+  "apk_native_codes": "Машинный код",
+  "apk_file_size": "Размер файла"
 }

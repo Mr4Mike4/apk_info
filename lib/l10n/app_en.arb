@@ -1,0 +1,57 @@
+{
+  "@@locale": "en",
+  "app_title": "ApkInfo",
+  "app_name": "ApkInfo",
+  "@app_name": {
+    "description": "название приложения"
+  },
+
+  "btn_add_files": "Add Files",
+  "btn_preview": "Preview",
+  "btn_rename_files": "Rename",
+  "btn_yes": "Yes",
+  "btn_save": "Save",
+  "btn_cancel": "Cancel",
+  "btn_select": "Choose",
+  "btn_close": "To close",
+
+  "file_path": "The path to the file",
+  "table_column_name": "The original name",
+  "table_column_new_name": "New name",
+  "file_name_mask": "Mask for the file name",
+  "file_delete_confirm": "Do you really want to remove \"{fileName}\" from the list?",
+  "@file_delete_confirm": {
+    "placeholders": {
+      "fileName": {
+        "type": "String",
+        "example": "app.apk"
+      }
+    }
+  },
+  "select_dest_folder": "Select the folder to which the files will be copied",
+  "copy_to_folder": "Copy Files",
+  "app_exit_confirm": "Do you really want to close the app?",
+
+  "settings_title": "Settings",
+  "settings_aapt_path": "The path to aapt2",
+  "settings_select_aapt_path": "Select the folder with aapt2",
+
+  "error_aapt_path": "Choose the correct path to aapt2",
+  "error_aapt_not_found": "aapt2 not found",
+
+  "tab_main": "Main",
+  "tab_permissions": "Permissions",
+
+  "apk_application_id": "Application ID",
+  "apk_version_code": "Version code",
+  "apk_version_name": "Version name",
+  "apk_platform_build_version_name": "Platform build version name",
+  "apk_platform_build_version_code": "Platform build version code",
+  "apk_compile_sdk_version": "Compile sdk version",
+  "apk_compile_sdk_version_codename": "Compile sdk version codename",
+  "apk_sdk_version": "SDK version",
+  "apk_target_sdk_version": "Target sdk version",
+  "apk_application_label": "Application label",
+  "apk_native_codes": "Native code",
+  "apk_file_size": "File size"
+}

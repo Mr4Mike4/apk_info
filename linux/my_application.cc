@@ -47,7 +47,7 @@ static void my_application_activate(GApplication* application) {
     gtk_window_set_title(window, "apk_info");
   }
 
-  gtk_window_set_default_size(window, 500, 720);
+  gtk_window_set_default_size(window, 1280, 720);
 //  gtk_widget_show(GTK_WIDGET(window));
   gtk_widget_realize(GTK_WIDGET(window));
 

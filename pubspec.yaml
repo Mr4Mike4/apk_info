@@ -45,8 +45,9 @@ dependencies:
   system_theme: 2.3.1
   uuid: 4.3.2
   shared_preferences: 2.2.2
-  parser_apk_info:
-    path: ../parser_apk_info
+#  parser_apk_info:
+#    path: ../parser_apk_info
+  parser_apk_info: ^1.0.1
 
 dev_dependencies:
   flutter_test:

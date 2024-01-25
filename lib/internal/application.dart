@@ -1,16 +1,16 @@
+import 'package:apk_info/internal/localiz.dart';
 import 'package:apk_info/presentation/styles/theme.dart';
 import 'package:apk_info/presentation/views/apk_list_page.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:go_router/go_router.dart';
 
-import '../localizations.dart';
 import '../presentation/views/home_page.dart';
 import '../presentation/views/settings_page.dart';
 
 part 'router.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -30,6 +30,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       builder: (context, child) {
+        final S = AppLocalizations.of(context);
+        Localiz.localeName = S.localeName;
         return Directionality(
           textDirection: TextDirection.ltr,
           child: NavigationPaneTheme(

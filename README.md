@@ -1,16 +1,48 @@
-# apk_info
+# ApkInfo
 
-A new Flutter project.
+The application for viewing information about the apk file.
 
-## Getting Started
+![ApkInfo screenshot](img/apk_info_light.jpg)
 
-This project is a starting point for a Flutter application.
+![ApkInfo screenshot](img/apk_info_dark.jpg)
 
-A few resources to get you started if this is your first Flutter project:
+## Install on Windows
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Run the script `apk_info_setup.ps1` to set associations with apk files.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build instructions
+
+- Install the [Flutter SDK](https://docs.flutter.dev/get-started/install)
+
+- Run code generation:
+
+```bash
+flutter pub get
+```
+
+```bash
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+- Run the code generation of text resources:
+
+```bash
+flutter gen-l10n
+```
+
+- Start the application build:
+
+```bash
+# for windows
+flutter build windows --release
+```
+
+```bash
+# for macos
+flutter build macos --release
+```
+
+```bash
+# for linux
+flutter build linux --release
+```
